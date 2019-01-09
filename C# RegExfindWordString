@@ -70,3 +70,26 @@
 
      
     }
+
+
+
+        @{
+            //  var x = job?.DelimitedTowns;
+            //  string myText = x.Split(new[] { " and " }, StringSplitOptions.None)[0];
+            //    @myText;
+        
+            string myString = job?.DelimitedTowns;
+            // var myString = " alba in zapada si cei 7 pitici in case  "
+            
+            var pattern = @"((?<= in )\s?\w+)";
+            var pattern1 = @"\w+\s?(?= in )";
+
+            string result1 = Regex.Match(myString, pattern1,
+              RegexOptions.Compiled | RegexOptions.IgnoreCase).ToString();
+
+            string result = Regex.Match(myString, pattern,
+             RegexOptions.Compiled | RegexOptions.IgnoreCase).ToString();
+
+            var final = result1 + " in " + result;
+             @final
+        }
