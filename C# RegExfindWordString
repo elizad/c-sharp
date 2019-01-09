@@ -5,6 +5,8 @@
     {
     	public static void Main()
     	{
+        
+         // 1 VERSION 
     		var searchString = "and";
     		var pattern = @"\b" + searchString + @"\b";    //searchString is passed in.
     		Regex rgx = new Regex(pattern);
@@ -15,5 +17,56 @@
             Console.WriteLine(match.Value);
     		}
     	}
+        
+        2 version 
+        
+            var pattern = @"((?<= in )\s?\w+)";
+            var pattern1 = @"\w+\s?(?= in )";
+
+            string result1 = Regex.Match(myString, pattern1,
+              RegexOptions.Compiled | RegexOptions.IgnoreCase).ToString();
+
+            string result = Regex.Match(myString, pattern,
+             RegexOptions.Compiled | RegexOptions.IgnoreCase).ToString();
+
+            var final = result1 + " in " + result;
+             @final
+
+
+ 3 version 
+   //var initialString = "alba in zapada si alti 7 oaneni mari in mici "
+      ////var initialString = job?.DelimitedTowns;
+            //var totalLenght = initialString.Length;
+            //var isMatch = " in ";
+            //var indexOfMatch = initialString.IndexOf(isMatch);
+            //var count = indexOfMatch + isMatch.Length;
+
+            //var firstString = initialString.Substring(0, count);
+            //// @firstString
+
+            //string test = job?.DelimitedTowns;
+            //string s1 = test.Substring(0, test.IndexOf(" in "));
+            //// @s1
+            ///
+            //  var nextOccurence = lastPart.IndexOf(isMatch);
+            // <p style=" background: green;">  @nextOccurence  </p>
+
+            //var intermediarPart = lastPart.Substring(0, lastPart.Length - count - indexOfMatch);
+
+            //var finalResult = firstString + intermediarPart;
+
+            // var nextOccurence = lastPart.IndexOf(isMatch);
+
+            // var intermediarPart = lastPart.Substring(0, lastPart.Length - count - indexOfMatch * 2);
+            //   @intermediarPart
+
+            // var finalResult = firstString + intermediarPart;
+
+            //  @finalResult
+
+            //string userEmail = job?.DelimitedTowns;
+            //int locationAt = userEmail.IndexOf(' in ');
+            //string obfuscatedMail = userEmail.Substring(0, 1) + new string('*', locationAt - 1) + userEmail.Substring(locationAt);
+
      
     }
